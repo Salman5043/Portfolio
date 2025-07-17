@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman Sayem - IoT & Automation Engineer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .skill-badge {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid white;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__fadeInLeft" href="#">Salman Sayem</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content animate__animated animate__fadeInLeft">
+                    <h1 class="display-4 fw-bold mb-3">Salman Sayem</h1>
+                    <h2 class="mb-4">IoT & Automation Engineer</h2>
+                    <p class="lead mb-4">Passionate about designing intelligent automation systems by combining IoT connectivity with machine learning algorithms to solve real-world problems.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-light btn-lg px-4">Contact Me</a>
+                        <a href="#about" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center animate__animated animate__fadeInRight">
+                    <img src="assets_task_01jz4n1kd2enda0djve46qtrtf_1751429276_img_1.jpg" alt="Salman Sayem" class="profile-img img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6 fade-in delay-1">
+                    <h3 class="mb-4">Professional Summary</h3>
+                    <p>Passionate and results-driven Automation and IoT Engineer with hands-on experience in sensor integration, embedded systems, and intelligent data-driven solutions.</p>
+                    <p>Seeking a challenging role to design and deploy smart automation systems by combining IoT connectivity with machine learning algorithms. Eager to contribute technical expertise in data collection, predictive modeling, and real-time analytics to develop scalable, intelligent solutions that solve real-world problems.</p>
+                </div>
+                <div class="col-lg-6 fade-in delay-2">
+                    <h3 class="mb-4">Personal Information</h3>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Address</h6>
+                                    <p class="mb-0">Vill-Mirzapur P/O- Binodpur Bazar, Thana-Mothar, Holding No-449, Dist-Rajshahi, Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Phone</h6>
+                                    <p class="mb-0">+8801731238820</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Email</h6>
+                                    <p class="mb-0">Sayem.Salman.504@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-birthday-cake"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Date of Birth</h6>
+                                    <p class="mb-0">11-01-1995</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills & Expertise</h2>
+            <div class="row">
+                <div class="col-md-6 fade-in delay-1">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Languages and Tools</h5>
+                        </div>
+                        <div class="card-body">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C</span>
+                            <span class="skill-badge">C++</span>
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">OpenCV</span>
+                            <span class="skill-badge">Scikit-learn</span>
+                            <span class="skill-badge">EasyOCR</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Computer Skills</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6>Utility Software</h6>
+                            <span class="skill-badge">Microsoft Excel</span>
+                            <span class="skill-badge">Microsoft Word</span>
+                            <span class="skill-badge">SAP ERP</span>
+                            
+                            <h6 class="mt-3">Statistical & Data Analysis</h6>
+                            <span class="skill-badge">MATLAB</span>
+                            
+                            <h6 class="mt-3">Drawing Software</h6>
+                            <span class="skill-badge">AutoCAD</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 fade-in delay-2">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Real Time Systems</h5>
+                        </div>
+                        <div class="card-body">
+                            <span class="skill-badge">MQTT</span>
+                            <span class="skill-badge">YOLOv5/v8</span>
+                            <span class="skill-badge">ESP32</span>
+                            <span class="skill-badge">Windows Automation</span>
+                            <span class="skill-badge">Computer Vision APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Data Handling</h5>
+                        </div>
+                        <div class="card-body">
+                            <span class="skill-badge">Pandas</span>
+                            <span class="skill-badge">NumPy</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">Web Scraping</span>
+                            <span class="skill-badge">OCR Pipelines</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Personal Skills</h5>
+                        </div>
+                        <div class="card-body">
+                            <span class="skill-badge">Leadership</span>
+                            <span class="skill-badge">Team Player</span>
+                            <span class="skill-badge">Self-motivated</span>
+                            <span class="skill-badge">Dependable</span>
+                            <span class="skill-badge">Goal Oriented</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Work Experience</h2>
+            
+            <div class="timeline fade-in delay-1">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">Assistant Manager, Automation and IoT</h4>
+                            <p class="mb-0">Suffix IT Limited | November 2023 - Present</p>
+                        </div>
+                        <div class="card-body">
+                            <h5>Responsibilities:</h5>
+                            <ul>
+                                <li>Designed and deployed end-to-end IoT systems integrating ESP32/ESP8266 and industrial sensors for smart energy monitoring, predictive maintenance and environmental tracking.</li>
+                                <li>Built real-time data pipelines using MQTT, Modbus, and collect and process sensor data efficiently.</li>
+                                <li>Developed and trained machine learning models in Python (scikit-learn, TensorFlow, XGBoost) for classification, anomaly detection, and predictive analytics.</li>
+                                <li>Design hardware for IoT gateway devices and sourcing equipment.</li>
+                                <li>Installation of devices and maintenance.</li>
+                                <li>Developed computer vision models.</li>
+                                <li>Collaborated with cross-functional teams on R&D projects involving smart agriculture, energy automation, and industrial digitization.</li>
+                            </ul>
+                            
+                            <h5 class="mt-4">Key Projects:</h5>
+                            <ul>
+                                <li>Smart Water meter for Dhaka Wasa for online billing.</li>
+                                <li>Energy monitoring system for Epic group, SQ group and Pexar Bangladesh.</li>
+                                <li>Smart weight machine for Abul khair group.</li>
+                                <li>Number Plate detection and extract number plate number using Computer vision.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">Engineer, CX section</h4>
+                            <p class="mb-0">Young Optics BD Limited | Feb 2018 - Oct 2023</p>
+                        </div>
+                        <div class="card-body">
+                            <h5>Responsibilities:</h5>
+                            <ul>
+                                <li>Led R&D efforts in developing and optimizing high-performance optical lenses, including anti-reflective and photochromic technologies.</li>
+                                <li>Designed and deployed IoT-enabled monitoring systems to track real-time parameters (e.g., temperature, humidity, UV exposure) during the lens coating and curing process.</li>
+                                <li>Developed and trained machine learning models (using Python, scikit-learn, TensorFlow) to detect coating defects and predict failure rates based on production data.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            
+            <div class="row fade-in delay-1">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="mb-0">Bachelor of Science</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Electrical & Electronic Engineering</h5>
+                            <p>Mymensingh engineering College</p>
+                            <p><strong>Major:</strong> Power</p>
+                            <p><strong>Duration:</strong> 4 Years</p>
+                            <p><strong>CGPA:</strong> 3.24 out of 4</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="mb-0">HSC</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Science</h5>
+                            <p>Ideal College, Dhamnondi</p>
+                            <p><strong>Board:</strong> Dhaka</p>
+                            <p><strong>GPA:</strong> 5.00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="mb-0">SSC</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Science</h5>
+                            <p>Masjid Mission Academy</p>
+                            <p><strong>Board:</strong> Rajshahi</p>
+                            <p><strong>GPA:</strong> 5.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row fade-in delay-2">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">Training</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Received training in Machine Learning with python from Creative IT Limited.</li>
+                                <li>Received training in root cause assessment and countermeasure training.</li>
+                                <li>Conducted Root Cause analysis for customer complain and implemented countermeasure.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Contact Me</h2>
+            
+            <div class="row fade-in delay-1">
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">Get In Touch</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4 class="mb-0">Contact Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Address</h6>
+                                    <p class="mb-0">Vill-Mirzapur P/O- Binodpur Bazar, Thana-Mothar, Holding No-449, Dist-Rajshahi, Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Phone</h6>
+                                    <p class="mb-0">+8801731238820</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Email</h6>
+                                    <p class="mb-0">Sayem.Salman.504@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-icons mb-4">
+                <a href="#" class="animate__animated animate__fadeIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="animate__animated animate__fadeIn animate__delay-1s"><i class="fab fa-github"></i></a>
+                <a href="#" class="animate__animated animate__fadeIn animate__delay-2s"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="animate__animated animate__fadeIn animate__delay-3s"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2023 Salman Sayem. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
